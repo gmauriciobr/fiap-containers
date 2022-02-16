@@ -7,6 +7,8 @@ services:
     networks:
       - spring-network
     command: --lower_case_table_names=0
+    # volumes:
+    #   - /tmp:/var/lib/mysql
     environment:
       MYSQL_DATABASE: teste_db
       MYSQL_ROOT_PASSWORD: fiap
@@ -46,7 +48,6 @@ services:
     depends_on:
       - demo
     restart: on-failure:10  
-  
 
 networks:
   spring-network:
